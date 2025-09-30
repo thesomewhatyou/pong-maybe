@@ -1,13 +1,13 @@
 // Main entry point
 import { Game } from './game.js';
 
-// Wait for TensorFlow.js to load
+// Initialize the game
 async function init() {
     const statusDiv = document.getElementById('status');
-    statusDiv.textContent = 'Loading TensorFlow.js...';
+    statusDiv.textContent = 'Initializing neural network...';
     
-    // Wait for TensorFlow.js to be ready
-    await tf.ready();
+    // Small delay to show loading message
+    await new Promise(resolve => setTimeout(resolve, 100));
     statusDiv.textContent = 'Press START to begin the quantum chaos...';
     
     // Initialize game

@@ -18,18 +18,22 @@ This project is an overcomplicated implementation of the classic Pong game, inco
 
 ### Machine Learning AI
 
-The AI opponent uses TensorFlow.js to implement a neural network with the following architecture:
+The AI opponent uses a custom-built neural network with backpropagation learning:
 
 - **Input Layer**: 4 normalized inputs (ball Y position, ball Y velocity, distance from paddle, paddle Y position)
 - **Hidden Layers**: Two dense layers with ReLU activation (16 and 8 units)
 - **Output Layer**: 3-class softmax (move up, stay, move down)
-- **Training**: Reinforcement learning with categorical cross-entropy loss
-- **Optimizer**: Adam optimizer with learning rate 0.01
+- **Training**: Backpropagation with gradient descent and reinforcement learning
+- **Learning Rate**: 0.01 with Xavier weight initialization
 
 The AI improves over time by:
 - Recording decisions during gameplay
 - Training on recent data when scoring events occur
+- Using backpropagation to adjust network weights
+- Combining neural network predictions with strategic ball trajectory prediction
 - Adjusting behavior based on success/failure outcomes
+
+The network implements a complete forward pass, softmax activation, and backpropagation algorithm from scratch without external dependencies.
 
 ### Chaos Systems
 
@@ -60,9 +64,10 @@ js/
 
 ### Dependencies
 
-- **TensorFlow.js** (v4.11.0): Machine learning library for AI opponent
 - **HTML5 Canvas API**: Graphics rendering
 - **ES6 Modules**: Code organization
+
+No external libraries required - all neural network and game logic implemented from scratch.
 
 ### Key Classes
 
@@ -115,14 +120,13 @@ Reality percentage decreases during quantum collapse events and gradually restor
 
 ## Performance
 
-The game runs at 60 FPS using `requestAnimationFrame`. TensorFlow.js training is asynchronous and occurs during scoring events to minimize performance impact.
+The game runs at 60 FPS using `requestAnimationFrame`. Neural network training uses backpropagation and occurs during scoring events with minimal performance impact.
 
 ## Browser Compatibility
 
 Requires a modern browser with support for:
 - ES6 modules
 - HTML5 Canvas
-- WebGL (for TensorFlow.js)
 - Async/await syntax
 
 Tested on:
@@ -165,4 +169,4 @@ This software is released into the public domain under The Unlicense. See LICENS
 
 ## Credits
 
-Built with vanilla JavaScript, HTML5 Canvas, and TensorFlow.js. 
+Built with vanilla JavaScript and HTML5 Canvas. Neural network implementation uses custom backpropagation algorithm. 
