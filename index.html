@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Pong - Maybe?</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+        }
+        
+        h1 {
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            font-size: 2.5em;
+            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+            animation: glitch 2s infinite;
+        }
+        
+        @keyframes glitch {
+            0%, 90%, 100% { transform: translate(0); }
+            92% { transform: translate(-2px, 2px); }
+            94% { transform: translate(2px, -2px); }
+            96% { transform: translate(-2px, -2px); }
+        }
+        
+        #gameCanvas {
+            border: 3px solid #00ff00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            background: #000;
+            display: block;
+            margin: 20px 0;
+        }
+        
+        #controls {
+            display: flex;
+            gap: 15px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background: #001a00;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: #00ff00;
+            color: #000;
+            box-shadow: 0 0 10px #00ff00;
+        }
+        
+        #info {
+            max-width: 800px;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 26, 0, 0.5);
+            border: 1px solid #00ff00;
+            margin-top: 20px;
+        }
+        
+        #status {
+            padding: 10px;
+            font-size: 1.2em;
+            min-height: 30px;
+        }
+        
+        .quantum-text {
+            animation: quantum-flicker 0.5s infinite;
+        }
+        
+        @keyframes quantum-flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <h1>🏓 QUANTUM PONG (Maybe?) 🏓</h1>
+    
+    <div id="status">Press START to begin the quantum chaos...</div>
+    
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    
+    <div id="controls">
+        <button id="startBtn">START</button>
+        <button id="pauseBtn">PAUSE</button>
+        <button id="resetBtn">RESET REALITY</button>
+        <button id="quantumBtn">TOGGLE QUANTUM MODE</button>
+        <button id="glitchBtn">BREAK PHYSICS</button>
+    </div>
+    
+    <div id="info">
+        <h3>How to Play (If You Can Call It That)</h3>
+        <p><strong>Controls:</strong> W/S or Arrow Up/Down to move your paddle</p>
+        <p><strong>Quantum Features:</strong></p>
+        <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+            <li>🌀 Ball exists in superposition (multiple ghost balls)</li>
+            <li>🧠 AI learns from your moves using a neural network</li>
+            <li>⚡ Uncertainty principle: speed and position are uncertain</li>
+            <li>🎲 Random quantum effects trigger chaos</li>
+            <li>🌌 Reality can break at any moment</li>
+            <li>👻 Quantum tunneling through paddles (sometimes)</li>
+        </ul>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
