@@ -1,73 +1,168 @@
-# pong-maybe
-I don't think this is pong.
+# Quantum Pong
 
-## 🌌 What is this madness?
+An experimental browser-based pong game featuring quantum physics simulations and machine learning AI.
 
-This is not your grandma's pong. This is an extremely overcomplicated game of pong featuring:
+## Overview
 
-### 🔬 Quantum Physics
-- **Quantum Superposition**: The ball exists in multiple states simultaneously (ghost balls everywhere!)
-- **Heisenberg Uncertainty Principle**: The more you know about the ball's position, the less you know about its velocity
-- **Quantum Tunneling**: Ball might phase through paddles because... quantum mechanics!
-- **Wave Function Collapse**: Each collision reduces uncertainty (temporarily)
-- **Quantum Entanglement**: Reality itself might flip and invert everything
+This project is an overcomplicated implementation of the classic Pong game, incorporating quantum mechanics concepts and a TensorFlow.js-powered AI opponent that learns from gameplay.
 
-### 🧠 Neural Network AI
-- The AI opponent uses a simple neural network that learns from gameplay
-- It adapts to your playing style over time
-- Reinforcement learning adjusts weights based on wins/losses
-- Quantum randomness affects AI decisions because why not?
+## Features
 
-### 🎪 Maximum Wackiness
-- **Reality Degradation**: The fabric of spacetime decays during intense quantum events
-- **Glitch Mode**: Break physics and watch reality fragment
-- **Quantum Events**: Random chaotic effects trigger during gameplay
-- **Particle Effects**: Schrödinger would be proud (or confused)
-- **Visual Glitches**: Reality glitches appear when things get too quantum
+### Quantum Physics Simulation
 
-## 🎮 How to Play
+- **Quantum Superposition**: The ball exists in multiple probable states simultaneously, visualized as ghost balls
+- **Heisenberg Uncertainty Principle**: Ball position and velocity become increasingly uncertain with each collision
+- **Quantum Tunneling**: The ball has a small probability (5%) of phasing through paddles
+- **Wave Function Collapse**: Uncertainty reduces upon collision, simulating quantum measurement
+- **Quantum Flux System**: Tracks accumulated quantum effects throughout gameplay
 
-1. Open `index.html` in your web browser
-2. Press **START** to begin
-3. Use **W/S** or **Arrow Up/Down** keys to control your paddle (green)
-4. Try to score against the AI (magenta paddle)
-5. Watch as quantum mechanics makes everything weird
+### Machine Learning AI
 
-### Controls
-- **START**: Begin the chaos
-- **PAUSE**: Pause the game
-- **RESET REALITY**: Reset scores and restore reality
-- **TOGGLE QUANTUM MODE**: Turn quantum effects on/off
-- **BREAK PHYSICS**: Enable glitch mode for maximum chaos
+The AI opponent uses TensorFlow.js to implement a neural network with the following architecture:
 
-## 🤯 Features Explained
+- **Input Layer**: 4 normalized inputs (ball Y position, ball Y velocity, distance from paddle, paddle Y position)
+- **Hidden Layers**: Two dense layers with ReLU activation (16 and 8 units)
+- **Output Layer**: 3-class softmax (move up, stay, move down)
+- **Training**: Reinforcement learning with categorical cross-entropy loss
+- **Optimizer**: Adam optimizer with learning rate 0.01
 
-### Quantum Flux
-A meter showing how much quantum weirdness is happening. Higher flux = more chaos.
+The AI improves over time by:
+- Recording decisions during gameplay
+- Training on recent data when scoring events occur
+- Adjusting behavior based on success/failure outcomes
 
-### Reality Percentage
-When reality drops below 100%, things get... weird. The universe becomes unstable.
+### Chaos Systems
 
-### Uncertainty
-The ball's uncertainty increases with collisions, making its behavior more unpredictable.
+- **Reality Degradation**: Universe stability metric (0-100%) that affects visual rendering
+- **Glitch Mode**: Enables chaotic effects including:
+  - Visual distortions and artifacts
+  - Paddle position swaps
+  - Gravity inversions
+  - Particle explosions
+- **Random Quantum Events**: Probabilistic triggers for various quantum phenomena
 
-## 🎯 Winning
+## Technical Architecture
 
-There is no winning. Only quantum chaos. But there are scores if that makes you feel better.
+### Modular Design
 
-## 💻 Technical Details
+The game is structured as ES6 modules:
 
-Built with vanilla JavaScript and HTML5 Canvas. No frameworks, no dependencies, just pure quantum chaos.
+```
+js/
+├── main.js        # Entry point and initialization
+├── game.js        # Main game controller
+├── paddle.js      # Paddle class
+├── ball.js        # Ball class with quantum properties
+├── ai.js          # TensorFlow.js AI controller
+├── particles.js   # Particle effects system
+└── renderer.js    # Rendering utilities
+```
 
-- **Neural Network**: Simple perceptron-like network with weighted inputs
-- **Quantum Effects**: Probability-based events and visual superposition
-- **Particle System**: For extra visual flair
-- **Reality Engine**: Tracks universe stability
+### Dependencies
 
-## 🤷 Why?
+- **TensorFlow.js** (v4.11.0): Machine learning library for AI opponent
+- **HTML5 Canvas API**: Graphics rendering
+- **ES6 Modules**: Code organization
 
-Why not?
+### Key Classes
 
-## 📜 License
+- `Game`: Main controller coordinating all game systems
+- `Paddle`: Player and AI paddle management
+- `Ball`: Ball physics with quantum properties
+- `AIController`: Neural network training and prediction
+- `Particle`: Visual effects
+- `Renderer`: Canvas rendering utilities
 
-Public domain. Do whatever you want with this quantum mess. 
+## How to Play
+
+1. Open `index.html` in a modern web browser (Chrome, Firefox, Edge, Safari)
+2. Wait for TensorFlow.js to load
+3. Click **START** to begin
+4. Control your paddle using:
+   - W/S keys, or
+   - Arrow Up/Down keys
+5. Score points against the AI opponent
+
+### Game Controls
+
+- **START**: Begin gameplay
+- **PAUSE**: Pause/resume the game
+- **RESET REALITY**: Reset scores and restore universe stability
+- **TOGGLE QUANTUM MODE**: Enable/disable quantum effects
+- **BREAK PHYSICS**: Enable/disable glitch mode
+
+## Game Mechanics
+
+### Scoring
+
+- Ball crossing the left edge scores a point for the AI
+- Ball crossing the right edge scores a point for the player
+- Each scoring event triggers AI training
+
+### Quantum Effects
+
+The quantum flux meter increases during gameplay and affects:
+- Number of superposition ghost balls
+- Probability of quantum events
+- Visual uncertainty effects
+
+### Reality System
+
+Reality percentage decreases during quantum collapse events and gradually restores over time. Low reality values cause:
+- Visual degradation
+- Reduced canvas opacity
+- Increased instability
+
+## Performance
+
+The game runs at 60 FPS using `requestAnimationFrame`. TensorFlow.js training is asynchronous and occurs during scoring events to minimize performance impact.
+
+## Browser Compatibility
+
+Requires a modern browser with support for:
+- ES6 modules
+- HTML5 Canvas
+- WebGL (for TensorFlow.js)
+- Async/await syntax
+
+Tested on:
+- Chrome 90+
+- Firefox 88+
+- Edge 90+
+- Safari 14+
+
+## Development
+
+The game uses vanilla JavaScript with no build process required. Simply serve the files over HTTP and open in a browser.
+
+For local development:
+```bash
+python3 -m http.server 8000
+# Navigate to http://localhost:8000
+```
+
+## Implementation Details
+
+### AI Training Strategy
+
+The AI uses a supervised learning approach with delayed feedback:
+1. Records input states and actions during gameplay
+2. Maintains a buffer of recent decisions (max 200)
+3. Trains on the most recent 50 decisions when scoring occurs
+4. Uses small batch size (16) and few epochs (3) to prevent overfitting
+
+### Quantum Simulation
+
+Quantum effects are simulated probabilistically:
+- Superposition: Multiple visual representations of possible states
+- Uncertainty: Random position/velocity offsets based on uncertainty value
+- Tunneling: Collision detection bypass with 5% probability
+- Entanglement: Random trajectory inversions
+
+## License
+
+This software is released into the public domain under The Unlicense. See LICENSE file for details.
+
+## Credits
+
+Built with vanilla JavaScript, HTML5 Canvas, and TensorFlow.js. 

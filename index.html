@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum Pong - Maybe?</title>
+    <title>Quantum Pong</title>
     <style>
         body {
             margin: 0;
@@ -93,9 +93,9 @@
     </style>
 </head>
 <body>
-    <h1>🏓 QUANTUM PONG (Maybe?) 🏓</h1>
+    <h1>QUANTUM PONG</h1>
     
-    <div id="status">Press START to begin the quantum chaos...</div>
+    <div id="status">Loading...</div>
     
     <canvas id="gameCanvas" width="800" height="600"></canvas>
     
@@ -108,19 +108,23 @@
     </div>
     
     <div id="info">
-        <h3>How to Play (If You Can Call It That)</h3>
+        <h3>How to Play</h3>
         <p><strong>Controls:</strong> W/S or Arrow Up/Down to move your paddle</p>
-        <p><strong>Quantum Features:</strong></p>
+        <p><strong>Features:</strong></p>
         <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
-            <li>🌀 Ball exists in superposition (multiple ghost balls)</li>
-            <li>🧠 AI learns from your moves using a neural network</li>
-            <li>⚡ Uncertainty principle: speed and position are uncertain</li>
-            <li>🎲 Random quantum effects trigger chaos</li>
-            <li>🌌 Reality can break at any moment</li>
-            <li>👻 Quantum tunneling through paddles (sometimes)</li>
+            <li>Quantum superposition - ball exists in multiple states</li>
+            <li>TensorFlow.js AI that learns from your gameplay</li>
+            <li>Heisenberg uncertainty principle affects ball position and velocity</li>
+            <li>Random quantum events trigger during gameplay</li>
+            <li>Reality degradation system</li>
+            <li>Quantum tunneling through paddles</li>
         </ul>
     </div>
     
-    <script src="game.js"></script>
+    <!-- TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.11.0/dist/tf.min.js"></script>
+    
+    <!-- Game modules -->
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
