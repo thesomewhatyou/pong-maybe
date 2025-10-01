@@ -58,7 +58,7 @@ const GAME_CONFIG = {
     
     ball: {
         radius: 8,
-        initialSpeed: 5,
+        initialSpeed: 25,
         maxSpeed: 25,
         minSpeed: 2,
         speedIncrement: 0.1,
