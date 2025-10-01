@@ -1,4 +1,4 @@
-# ⚛️ Quantum Chaos Pong ⚛️
+# Pong(?)
 
 I don't think this is pong... **IT'S SO MUCH MORE!**
 
@@ -15,12 +15,13 @@ Welcome to **Quantum Chaos Pong**, a game that takes the classic Pong concept an
   - Heisenberg uncertainty principle
   - Quantum tunneling through barriers
   - Dimensional rifts (portals)
+  - Everywhere and nowhere
 - **Neural Network AI** - TensorFlow.js powered AI that learns from your gameplay
 - **Advanced Physics** - Gravity, friction, elasticity, momentum, angular velocity, force fields
-- **Particle System** - Up to 5,000 particles for stunning visual effects
+- **Particle System** - Up to 5,000 particles for stunning visual effects. RTX 5090 required (Kidding. Mostly)
 - **Procedural Audio** - Dynamic music generation using Web Audio API
 - **12 Power-Up Types** - Speed boost, multi-ball, shields, time manipulation, and more
-- **Multiple Game Modes** - VS AI, VS Quantum AI, and CHAOS MODE
+- **Multiple Game Modes** - VS AI, VS Quantum AI, and CHAOS MODE. All self-explanatory.
 - **Obstacles** - Moving, rotating, and breakable obstacles add complexity
 - **Visual Effects** - Screen shake, glows, trails, quantum entanglement lines
 
@@ -67,9 +68,11 @@ Welcome to **Quantum Chaos Pong**, a game that takes the classic Pong concept an
 - Learns from every match
 - Saves trained model to browser storage
 
+The AI model is not heavy. It is trained to play Pong, not be GPT-oss:120b.
+
 **VS Quantum AI**
 - Uses quantum superposition for predictions
-- Embraces uncertainty principle
+- Embraces the uncertainty principle
 - Unpredictable and challenging
 
 **CHAOS MODE**
@@ -84,7 +87,7 @@ Welcome to **Quantum Chaos Pong**, a game that takes the classic Pong concept an
 **Quantum Superposition** (SPACE)
 - Ball exists in multiple states simultaneously
 - Creates ghost balls at different positions
-- Collapses to random state when observed
+- Collapses to a random state when observed
 
 **Dimensional Rifts** (Q)
 - Create wormholes for instant teleportation
@@ -152,7 +155,7 @@ This is free and unencumbered software released into the public domain. See LICE
 # Clone the repository
 git clone https://github.com/thesomewhatyou/pong-maybe.git
 
-# Navigate to directory
+# Navigate to directory (make sure to cd to ~ if not in your home dir)
 cd pong-maybe
 
 # Open in browser (or use a local server)
@@ -171,7 +174,7 @@ This project showcases:
 - Physics simulation
 - Collision detection
 - Particle systems
-- AI and machine learning
+- AI and ML (It wasn't necessary)
 - Procedural generation
 - Web Audio API
 - Canvas rendering
@@ -186,4 +189,9 @@ This project showcases:
 - Addiction to overcomplicated game mechanics
 - A newfound appreciation for simple Pong
 
-Enjoy the chaos! ⚛️💫🎮 
+(You won't) Enjoy the chaos! 
+
+I considered using the Gemini API, but the response time was too low and I needed requests to send instantly. I probably should've said "Up or down?" and if the AI said up then it would trigger a 
+virtual keypress. And I know, hardcoded API keys = bad, but I give out like 20 a month. Google never bills me.
+
+Google please fix I will bankrupt you if no
